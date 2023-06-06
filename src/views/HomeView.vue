@@ -9,7 +9,7 @@
       <button @click="decreaseCounter(1)" class="btn">-1</button>
       <button @click="decreaseCounter(2)" class="btn">-2</button>
       <span class="counter">{{ counterData.count }}</span>
-      <button @click="increaseCounter(1, $event)" class="btn">+1</button>
+      <button @click="increaseCounter(1)" class="btn">+1</button>
       <button @click="increaseCounter(2)" class="btn">+2</button>
     </div>
 
@@ -24,10 +24,17 @@
 </template>
 
 <script setup>
-  import { ref, reactive, computed, watch } from 'vue';
+  // imports
+  import { ref, reactive, computed, watch, onMounted } from 'vue';
 
-const appTitle = 'My Amazing Counter Title'
+  // app title
+  const appTitle = 'My Amazing Counter Title';
 
+  onMounted(() => {
+    console.log('Do stuff related to app title');
+  });
+
+  // counter
   const counterData = reactive({
     count: 0,
     title: 'My Counter'
@@ -49,13 +56,16 @@ const appTitle = 'My Amazing Counter Title'
   })
 
   const increaseCounter = (amount, e) => {
-    console.log(e);
     counterData.count += amount;
   }
 
   const decreaseCounter = amount => {
     counterData.count -= amount;
   }
+
+  onMounted(() => {
+    console.log('Do stuff related to counter');
+  });
 </script>
 
 <style>
