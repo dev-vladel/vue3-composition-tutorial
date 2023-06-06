@@ -1,6 +1,6 @@
 # vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+This tutorial is based on the one provided by **Make Apps with Danny** from [here](https://www.youtube.com/playlist?list=PLAiDzIdBfy8jr-ccMU8ymPn7o85RAZ_6T).
 
 ## Recommended IDE Setup
 
